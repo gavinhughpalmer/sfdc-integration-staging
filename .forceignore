@@ -3,5 +3,5 @@
 #
 
 package.xml
-force-app/main/default/profiles/Admin.profile-meta.xml
-force-app/main/default/profiles/Trial Customer Portal User.profile-meta.xml
+// ignore profiles as we intend to build out everything with permission sets
+force-app/main/default/profiles/*
