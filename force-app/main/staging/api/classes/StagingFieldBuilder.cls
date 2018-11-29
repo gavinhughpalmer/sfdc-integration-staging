@@ -37,7 +37,7 @@ public class StagingFieldBuilder {
     }
 
     private String getSObjectName() {
-        return stagingFieldToBuild.Staging_Header__r.Salesforce_Object__c
+        return stagingFieldToBuild.Staging_Header__r.Salesforce_Object__c;
     }
 
     public void setField(String fieldName, Object fieldValue) {
