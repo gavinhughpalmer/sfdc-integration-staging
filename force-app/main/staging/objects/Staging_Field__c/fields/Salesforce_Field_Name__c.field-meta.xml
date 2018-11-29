@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Salesforce_Field_Name__c</fullName>
+    <description>The API name for the field in Salesforce that this record should be migrated to</description>
+    <externalId>false</externalId>
+    <label>Salesforce Field Name</label>
+    <length>83</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

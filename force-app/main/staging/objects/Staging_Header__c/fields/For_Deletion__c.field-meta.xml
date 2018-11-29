@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>For_Deletion__c</fullName>
+    <description>This formula will determine when the staging records should be deleted from the system after being approved</description>
+    <externalId>false</externalId>
+    <formula>AND(
+ ISPICKVAL(Status__c, &quot;Approved&quot;),
+ LastModifiedDate &lt; (NOW() - 1)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>For Deletion</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>
