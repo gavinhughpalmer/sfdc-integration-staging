@@ -1,0 +1,41 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: jstvz/sfdx-ci
+    steps:
+      - checkout
+      - run:
+          name: Login to Production
+          command: . build/sfdx/login.sh -l https://login.salesforce.com -c $SFDC_PROD_CLIENT_ID -u $SFDC_PROD_USER
+      - run:
+          name: Compile and Run Tests
+          command: . build/sfdx/run-tests.sh
+      - store_test_results:
+          path: test-results
+  deploy-prod:
+    docker:
+      - image: jstvz/sfdx-ci
+    steps:
+      - checkout
+      - run:
+          name: Login to Production
+          command: . build/sfdx/login.sh -l https://login.salesforce.com -c $SFDC_PROD_CLIENT_ID -u $SFDC_PROD_USER
+      - run:
+          name: Deploy to Production
+          command: . build/sfdx/deploy.sh false
+
+  workflows:
+    version: 2
+    validate:
+      jobs:
+        - build:
+            filters:
+              branches:
+                ignore:
+                  - master
+        - deploy-prod:
+            filters:
+              branches:
+                only:
+                  - master

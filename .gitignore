@@ -197,7 +197,9 @@ typings/
 .settings/
 .metadata
 build.properties
-config
+config/*
+!config/project-scratch-def.json
+
 
 # Apex Log as optional
 apex-scripts/log
@@ -207,7 +209,6 @@ salesforce.schema
 Referenced Packages
 bin/
 tmp/
-config/
 *.tmp
 *.bak
 local.properties
@@ -228,16 +229,10 @@ out
 *.sublime-workspace
 mm.log
 
-# Haoide SublimeText
-.config
-.deploy
-.history
 
 # OSX-specific exclusions
 .[dD][sS]_[sS]tore
 
-# The Welkin Suite specific
-**/.localHistory
 
 *.sfuo
 
