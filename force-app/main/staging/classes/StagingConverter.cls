@@ -3,6 +3,5 @@
  */
 
 public with sharing class StagingConverter {
-    private
 
 }

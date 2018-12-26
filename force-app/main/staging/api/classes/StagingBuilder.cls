@@ -4,13 +4,13 @@
 
 global class StagingBuilder {
 
-    private Datetime changedDatetime = Datetime.now();
+    private Datetime changedDatetime;
     private String salesforceObject;
     private String sourceIdentifier;
-    private Map<String, Object> fieldValues = new Map<String, Object>();
-    private StagingHeaderBuilder header = new StagingHeaderBuilder();
-    private Staging_Header__c headerRecord = new Staging_Header__c();
-    private List<Staging_Field__c> fields = new List<Staging_Field__c>();
+    private Map<String, Object> fieldValues;
+    private StagingHeaderBuilder header;
+    private Staging_Header__c headerRecord;
+    private List<Staging_Field__c> fields;
 
     global void setTargetObject(String salesforceObject) {
         this.salesforceObject = salesforceObject;

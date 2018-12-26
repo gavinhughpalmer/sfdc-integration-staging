@@ -35,7 +35,9 @@ global class StagingCreatorBulk {
 
 
     @HttpPost
-    global static List<StagingResponse> insertStaging(List<StagingBuilder> stagingDetails) {
+    global static List<StagingResponse> insertStaging() {
+        String jsonBody = RestContext.request.requestBody.toString();
+        List<StagingBuilder> stagingDetails = (List<StagingBuilder>) JSON.deserialize(jsonBody, List<StagingBuilder>.class);
         Map<String, StagingResponse> responsesByStagingId = new Map<String, StagingResponse>();
         List<Staging_Header__c> orderedHeaders = new List<Staging_Header__c>();
         Map<String, List<Staging_Field__c>> stagingFieldsByHeaderId = new Map<String, List<Staging_Field__c>>();

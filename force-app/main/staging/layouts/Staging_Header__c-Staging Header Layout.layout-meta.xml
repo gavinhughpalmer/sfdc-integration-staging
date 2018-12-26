@@ -75,7 +75,6 @@
     <relatedLists>
         <fields>NAME</fields>
         <fields>Salesforce_Field_Name__c</fields>
-        <fields>Input_Field_Value__c</fields>
         <relatedList>Staging_Field__c.Staging_Header__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>

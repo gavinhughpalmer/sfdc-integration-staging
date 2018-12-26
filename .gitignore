@@ -310,3 +310,6 @@ GitHub.sublime-settings
 
 force-app/main/default/profiles/*
 .vscode/
+
+# Ignore the test results
+test-results
