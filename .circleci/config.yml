@@ -26,13 +26,15 @@ jobs:
           command: . build/sfdx/deploy.sh false
   workflows:
     version: 2
-    validate:
+    build:
       jobs:
         - build:
             filters:
               branches:
                 ignore:
                   - master
+    deploy:
+      jobs:
         - deploy-prod:
             filters:
               branches:
